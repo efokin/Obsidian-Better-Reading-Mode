@@ -92,7 +92,7 @@ function replaceTextWithElements(app: App, node: Node, rules: HighlightRule[]) {
             while ((match = regex.exec(textContent)) !== null) {
                 const part = match[0];
 
-                console.log(part);
+                //console.log(part);
 
                 const precedingText = textContent.substring(lastIndex, match.index);
                 newTextContent += precedingText;
@@ -108,7 +108,7 @@ function replaceTextWithElements(app: App, node: Node, rules: HighlightRule[]) {
 
         const parser = new DOMParser();
         const doc = parser.parseFromString(textContent, "text/html");
-        console.log(doc.body.childNodes);
+        //console.log(doc.body.childNodes);
         Array.from(doc.body.childNodes).forEach((newNode) => {
             if (newNode.nodeName === "#text") {
                 node.parentNode?.insertBefore(newNode.cloneNode(true), node);
